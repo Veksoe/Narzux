@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+	background-image:
+		url("http://st.depositphotos.com/1740194/4289/v/950/depositphotos_42895717-Rubber-duck-on-white-background.jpg");
+}
+
+.main {
+	width: 400px;
+	height: 400px;
+	background-color: #3FCD86;
+}
+
+.logo {
+	background-image:
+		url("http://narzux.weebly.com/uploads/7/9/4/3/7943313/9661665.png");
+	width: 50%;
+	height: 50%;
+	background-repeat: no-repeat;
+	margin-left: 25%;
+	background-size: contain;
+}
+
+.input {
+	margin-left: 25%;
+	margin-bottom: 3%;
+}
+
+.text {
+	margin-left: 25%;
+	margin-bottom: 10%;
+}
+
+.sendButton {
+	margin-left: 25%;
+}
+
+.logo:hover {
+	background-color: aqua;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: green;
+}
+
+a:active {
+	color: green;
+}

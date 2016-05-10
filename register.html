@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/style.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css"
+	media="handheld, only screen and (max-device-width:480px)" />
+<title>Opret bruger</title>
+</head>
+<body>
+	<form action="php/register.php" method="post">
+		<div class="main">
+			<div class="logo"></div>
+			<a class="text">Brugernavn?</a> <input type="text" name="username"
+				id="username" placeholder="Brugernavn" class="input"
+				required="required"> <a class="text">Email</a><input
+				type="email" name="useremail" id="useremail" placeholder="Email"
+				class="input" required="required"> <a class="text">Kode</a><input
+				type="password" name="userpassword" id=" userpassword"
+				placeholder="Kode" class="input" required="required"> <a
+				class="text">Gentag koden</a><input type="password"
+				placeholder="Kode" class="input" required="required"> <input
+				type="submit" class="sendButton" style="margin-left: 5%;"
+				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
+		</div>
+	</form>
+</body>
+</html>
