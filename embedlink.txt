@@ -1,0 +1,10 @@
+<object data=http://testingstuff.orgfree.com/bestilling.php width="900" height="600">
+   <embed src=http://testingstuff.orgfree.com/bestilling.php width="900" height="600"> </embed>
+   Error: Embedded data could not be displayed. 
+</object>
+
+
+<object data=http://testingstuff.orgfree.com/forslag.php width="900" height="600">
+   <embed src=http://testingstuff.orgfree.com/forslag.php width="900" height="600"> </embed>
+   Error: Embedded data could not be displayed. 
+</object>
