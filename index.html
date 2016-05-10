@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/style.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css"
+	media="handheld, only screen and (max-device-width:480px)" />
+<title>Test</title>
+</head>
+<body>
+	<form>
+		<div class="main">
+			<div class="chat">
+				<textarea style="height: 99%; width: 98%;" disabled="disabled"> </textarea>
+			</div>
+
+			<div class="textbox">
+				<textarea
+					onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }"
+					name="usermsg" id="usermsg" rows="3" cols="25"></textarea>
+			</div>
+
+			<div class="side">
+				<div class="online">
+					<input type="submit" class="sendButton">
+				</div>
+
+			</div>
+			<input class="color" type="color" name="col" id="col" value="#000000" />
+			<input type="color" name="bgcol" id="bgcol" value="#FFFFFF"
+				class="color" />
+		</div>
+	</form>
+</body>
+</html>
