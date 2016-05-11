@@ -5,12 +5,13 @@ $error = "";
 if (isset ( $_POST ["username"] )) {
 	session_start ();
 	$myusername = DB::esc ( $_POST ["username"] );
-	$encrypted_txt = DB::esc ( ED::encrypt ( $_POST ["userpassword"] ) );
+	$encrypted_txt = (ED::encrypt ( $_POST ["userpassword"] ));
 	$date = date ( 'j/n-H:i' );
 	
-	$q = DB::query ( "SELECT id FROM members WHERE Username = '$myusername' and Password = '$encrypted_txt'" );
+	$q2 = DB::query ( "SELECT id FROM members WHERE Username = '$myusername' and Password = '$encrypted_txt'" );
 	
-	$count = mysqli_num_rows ( $q );
+	$count = mysqli_num_rows ( $q2 );
+	echo $count;
 	
 	if ($count == 1) {
 		$q = DB::query ( "UPDATE members
