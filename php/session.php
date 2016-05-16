@@ -18,7 +18,7 @@ if (! isset ( $_SESSION ['login_user'] )) {
 	<h1>
 	Welcome ", $login_session, " 
 
-<Input type='button' onclick='session_destroy()'>
+<Input type='button' onclick=", session_destroy (), ">
 </h1>";
 }
 ?>
