@@ -1,7 +1,4 @@
-<?php
-include ('php/session.php');
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -10,10 +7,8 @@ include ('php/session.php');
 <title>Logged in!</title>
 </head>
 <body>
-	YOU ARE NOW LOGGED IN!
-	<h1>
-		Welcome
-		<?php echo $login_session; ?>
-	</h1>
+<?php
+include ('php/session.php');
+?>
 </body>
 </html>

@@ -17,7 +17,7 @@ if (isset ( $_POST ["username"] )) {
 		$sql2 = "INSERT INTO members (Username, Password, Email, Joindate, lastOnline, Rank, Question) VALUES ('$myusername','$encrypted_txt','$myuseremail', '$date','$date', 1,'$myUserQustion')";
 		$q2 = DB::query ( $sql2 );
 		
-		header ( "location:/dashboard/Annika/Narzux/index.php" );
+		header ( "location:index.php" );
 	} else {
 		$error = "Error: Username: $myusername is already in use!";
 	}

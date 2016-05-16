@@ -25,8 +25,6 @@ if (isset ( $_POST ["username"] )) {
 			$header .= $decrypted_txt = ED::decrypt ( $row ["Password"] );
 		}
 		$done = true;
-		
-		// header ( "location:/dashboard/Annika/Narzux/index.php" );
 	} else {
 		$error = "Unknown Email or Username, please try again or contact a admin.";
 	}

@@ -18,7 +18,7 @@ if (isset ( $_POST ["username"] )) {
 	SET lastOnline='$date'
 	WHERE Username = '$myusername' and Password = '$encrypted_txt'" );
 		$_SESSION ['login_user'] = $myusername;
-		header ( "location:/dashboard/Annika/Narzux/Done.php" );
+		header ( "location:done.php" );
 	} else {
 		$error = "Unkown Username and/or password!";
 	}
