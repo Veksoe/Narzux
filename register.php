@@ -12,7 +12,7 @@ if (isset ( $_POST ["username"] )) {
 		
 		$encrypted_txt = DB::esc ( ED::encrypt ( $_POST ["userpassword"] ) );
 		$myuseremail = DB::esc ( $_POST ["useremail"] );
-		$myUserQustion = DB::esc ( $_POST ["userQuestion"] );
+		$myUserQustion = DB::esc ( ED::encrypt ( $_POST ["userQuestion"] ) );
 		$date = date ( 'j/n-H:i' );
 		$sql2 = "INSERT INTO members (Username, Password, Email, Joindate, lastOnline, Rank, Question) VALUES ('$myusername','$encrypted_txt','$myuseremail', '$date','$date', 1,'$myUserQustion')";
 		$q2 = DB::query ( $sql2 );
@@ -23,6 +23,7 @@ if (isset ( $_POST ["username"] )) {
 	}
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,25 +37,74 @@ if (isset ( $_POST ["username"] )) {
 <title>Opret bruger</title>
 </head>
 <body>
-	<form action="" method="post">
-		<div class="main">
-			<div class="logo"></div>
-			<a class="text">Brugernavn?</a> <input type="text" name="username"
-				id="username" placeholder="Brugernavn" class="input"
-				required="required"> <a class="text">Email</a><input type="email"
-				name="useremail" id="useremail" placeholder="Email" class="input"
-				required="required"> <a class="text">Kode</a><input type="password"
-				name="userpassword" id="userpassword" placeholder="Kode"
-				class="input" required="required"> <a class="text">Hvad var yndlings
-				dyr?</a><input type="text" placeholder="Svar" class="input"
-				required="required" id="userQuestion" name="userQuestion"> <input
-				type="submit" class="sendButton" style="margin-left: 5%;"
-				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
-			<div style="color: red; text-align: center;">
-				<?php echo $error?>
-			</div>
-		</div>
+	<div class="main">
+		<div class="logo"></div>
 
-	</form>
+		<form action="" method="post">
+			<div id="error" class="text" style="margin-bottom: 0"></div>
+			<a class="text">Brugernavn:</a> <input name="username"
+				oninput="usernameTest('error',this.value)" placeholder="Brugernavn"
+				class="input" required="required"><a class="text">Email:</a><input
+				name="useremail" class="input" type="email"
+				oninput="emailTest('error',this.value)" placeholder="Email"
+				required="required"><a class="text">Kode:</a> <input
+				name="userpassword" type="password" placeholder="Kode" class="input"
+				required="required"> <a class="text">Hvad var yndlings dyr?</a><input
+				name="userQuestion" placeholder="Hvad er yndlings dyr?"
+				class="input" required="required"><input type="submit"
+				class="sendButton" style="margin-left: 5%;"
+				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
+
+		</form>
+
+	</div>
+	<script type="text/javascript">
+		var ready = false;
+
+		function print(text) {
+			console.log(text);
+		}
+
+		function getElement(id) {
+			return document.getElementById(id);
+		}
+
+		function usernameTest(id, text) {
+			if (text == "") {
+				getElement(id).innerHTML = "";
+				return;
+			} else {
+				if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				}
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						getElement(id).innerHTML = xmlhttp.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/usernametest.php?A=" + text, true);
+				xmlhttp.send();
+			}
+
+		}
+
+		function emailTest(id, text) {
+
+			getElement(id).style.color = "red";
+
+			if (text.indexOf("@") != -1 && text.indexOf(".") != -1
+					&& text.indexOf(".") != text.indexOf("@") + 1
+					&& text.lastIndexOf(".") != text.length - 1) {
+				getElement(id).style.color = "green";
+				code = "This email is a valid email!";
+				ready = true;
+			} else {
+
+				code = "This email isn't valid!";
+				ready = false;
+			}
+			getElement(id).innerHTML = code;
+		}
+	</script>
 </body>
 </html>
