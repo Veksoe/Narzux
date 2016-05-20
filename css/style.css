@@ -3,56 +3,68 @@
 body {
 	margin: 0;
 	padding: 0;
-	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin-top: 10%;
-	background-image:
-		url("http://st.depositphotos.com/1740194/4289/v/950/depositphotos_42895717-Rubber-duck-on-white-background.jpg");
+	background-image: url(img/back.png);
+	font: 1em sans-serif;
 }
 
 .main {
-	width: 378px;
-	height: 171px;
-	background-color: #3FCD86;
+	width: 375px;
+	height: 520px;
+	background-image: url(img/Chatlogonbase.png);
+	margin-top: 4%;
 }
 
 .logo {
 	background-image:
-		url("http://narzux.weebly.com/uploads/7/9/4/3/7943313/9661665.png");
+		url("http://narzux.weebly.com/uploads/7/9/4/3/7943313/6255150.png");
 	width: 50%;
-	height: 50%;
+	height: 36%;
 	background-repeat: no-repeat;
-	margin-left: 25%;
+	margin-left: 26%;
+	margin-top: 8%;
 	background-size: contain;
 }
 
-.input {
-	margin-left: 25%;
+input{
+	background-image: url(img/text.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border-style: none;
+	width: 60%;
+	height: 52px;
+	margin-left: 20%;
 	margin-bottom: 1%;
+	padding-left: 10px;
+	font: 1em sans-serif;
 }
 
 .text {
 	margin-left: 25%;
 }
 
-.sendButton {
-	margin-left: 25%;
-}
-
-.logo:hover {
-	background-color: aqua;
+input[type=submit] {
+	margin-left: 35%;
+	background-image: url(img/knap.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-style: none;
+	width: 35%;
+	height: 52px;
+	color: #016B32;
 }
 
 a:link {
-	color: black;
+	color: #86BD3B;
 	text-decoration: none;
 }
 
 a:visited {
-	color: green;
+	color: #86BD3B;
 }
 
 a:active {
-	color: green;
+	color: #86BD3B;
 }

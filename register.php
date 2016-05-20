@@ -42,17 +42,13 @@ if (isset ( $_POST ["username"] )) {
 
 		<form action="" method="post">
 			<div id="error" class="text" style="margin-bottom: 0"></div>
-			<a class="text">Brugernavn:</a> <input name="username"
-				oninput="usernameTest('error',this.value)" placeholder="Brugernavn"
-				class="input" required="required"><a class="text">Email:</a><input
-				name="useremail" class="input" type="email"
-				oninput="emailTest('error',this.value)" placeholder="Email"
-				required="required"><a class="text">Kode:</a> <input
-				name="userpassword" type="password" placeholder="Kode" class="input"
-				required="required"> <a class="text">Hvad var yndlings dyr?</a><input
+			<input name="username" oninput="usernameTest('error',this.value)"
+				placeholder="Brugernavn" required="required"><input name="useremail"
+				type="email" oninput="emailTest('error',this.value)"
+				placeholder="Email" required="required"> <input name="userpassword"
+				type="password" placeholder="Kode" required="required"> <input
 				name="userQuestion" placeholder="Hvad er yndlings dyr?"
-				class="input" required="required"><input type="submit"
-				class="sendButton" style="margin-left: 5%;"
+				required="required"><input type="submit"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 
 		</form>

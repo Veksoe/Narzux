@@ -47,18 +47,17 @@ if (isset ( $_POST ["username"] )) {
 <title>Forgot</title>
 </head>
 <body>
-	<form action="" method="post">
-		<div class="main">
-			<div class="logo"></div>
+
+	<div class="main">
+		<div class="logo"></div>
+		<form action="" method="post">
 			<?php if($done == false){?>
-			<a class="text">Brugernavn</a> <input type="text" name="username"
-				id="username" placeholder="Brugernavn" class="input"
-				required="required"> <a class="text">Email</a><input type="email"
-				name="useremail" id="useremail" placeholder="Email" class="input"
-				required="required"> <a class="text">Hvad var yndlings dyr?</a> <input
+		 <input type="text" name="username" id="username"
+				placeholder="Brugernavn" required="required"
+				style="margin-top: 10%;"> <input type="email" name="useremail"
+				id="useremail" placeholder="Email" required="required"> <input
 				name="userQuestion" id="userQuestion" placeholder="Svar"
-				class="input" required="required"><input type="submit"
-				class="sendButton"
+				required="required"><input type="submit"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 			<div style="color: red; text-align: center;">
 				<?php
@@ -69,7 +68,8 @@ if (isset ( $_POST ["username"] )) {
 			}
 			?>
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
+
 </body>
 </html>

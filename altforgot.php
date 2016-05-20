@@ -55,10 +55,10 @@ if (isset ( $_POST ["username"] )) {
 		<div class="main">
 			<div class="logo"></div>
 			<a class="text">Brugernavn</a> <input type="text" name="username"
-				id="username" placeholder="Brugernavn" class="input"
-				required="required"> <a class="text">Email</a><input type="email"
-				name="useremail" id="useremail" placeholder="Email" class="input"
-				required="required"> <input type="submit" class="sendButton"
+				id="username" placeholder="Brugernavn" required="required"> <a
+				class="text">Email</a><input type="email" name="useremail"
+				id="useremail" placeholder="Email" required="required"> <input
+				type="submit"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 			<div style="color: red; text-align: center;">
 				<?php echo $error?>

@@ -41,21 +41,23 @@ if (isset ( $_POST ["username"] )) {
 <title>Test</title>
 </head>
 <body>
-	<form action="" method="post">
-		<div class="main">
-			<div class="logo"></div>
+	<div class="main">
+
+		<div class="logo"></div>
+		<form action="" method="post">
 			<input type="text" name="username" id="username"
-				placeholder="Brugernavn" class="input" required="required"><br> <a
+				placeholder="Brugernavn" required="required" style="margin-top: 10%;"><br> <a
 				href="register.php" class="text">Ikke medlem?</a><br> <input
 				type="password" name="userpassword" id="userpassword"
-				placeholder="Kode" class="input" required="required"> <br> <a
-				href="forgot.php" class="text">Glemt din kode?</a> <br> <input
-				type="submit" class="sendButton"
+				placeholder="Kode" required="required"> <br> <a href="forgot.php"
+				class="text">Glemt din kode?</a> <br> <input type="submit"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 			<div style="color: red; text-align: center;">
 				<?php echo $error?>
 			</div>
-		</div>
-	</form>
+
+		</form>
+	</div>
+
 </body>
 </html>
