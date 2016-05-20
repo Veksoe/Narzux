@@ -33,7 +33,7 @@ if (isset ( $_POST ["username"] )) {
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" href="css/style.css" media="screen" />
 <link rel="stylesheet" href="css/mobile.css"
-	media="handheld, only screen and (max-device-width:640px)" />
+	media="handheld, only screen and (max-device-width:1280px)" />
 <title>Opret bruger</title>
 </head>
 <body>

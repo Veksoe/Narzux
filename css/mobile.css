@@ -1,25 +1,28 @@
 @CHARSET "ISO-8859-1";
 
-body {
-	background-image: none;
-}
+
 
 .main {
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	width: 100%;
+	width: 98%;
 	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: -1%;
+	margin-left: 1%;
+	background-image: url(img/Chatbasemobil.png);
 }
 
 .logo {
 	position: relative;
 	width: 55%;
 	height: 30%;
-	margin-left: 20%;
+	margin-left: 25%;
 }
 
-.input {
+input {
 	width: 80%;
 	margin-left: 10%;
 	margin-bottom: 1%;
@@ -29,6 +32,6 @@ body {
 	margin-left: 10%;
 }
 
-.sendButton {
+input [type=submit] {
 	margin-left: 10%;
 }
