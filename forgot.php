@@ -8,7 +8,8 @@ if (isset ( $_POST ["username"] )) {
 	
 	$myusername = DB::esc ( $_POST ["username"] );
 	$myuseremail = DB::esc ( $_POST ["useremail"] );
-	$sql = "SELECT Password  FROM members WHERE Username = '$myusername' and Email = '$myuseremail'";
+	$myuserquestion = DB::esc ( ED::encrypt ( $_POST ["userQuestion"] ) );
+	$sql = "SELECT Password  FROM members WHERE Username = '$myusername' and Email = '$myuseremail' and Question = '$myuserquestion'";
 	$q = DB::query ( $sql );
 	
 	$count = mysqli_num_rows ( $q );

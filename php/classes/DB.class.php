@@ -27,6 +27,8 @@ class DB {
 	public static function esc($str) {
 		return self::$instance->MySQLi->real_escape_string ( htmlspecialchars ( $str ) );
 	}
+	public static function close() {
+		self::$instance->MySQLi->close ();
+	}
 }
-
 ?>
