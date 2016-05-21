@@ -1,7 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-
-
 .main {
 	position: absolute;
 	top: 0%;
@@ -24,6 +22,7 @@
 
 input {
 	width: 80%;
+	height: 67px;
 	margin-left: 10%;
 	margin-bottom: 1%;
 }

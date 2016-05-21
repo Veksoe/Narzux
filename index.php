@@ -11,7 +11,6 @@ if (isset ( $_POST ["username"] )) {
 	$q2 = DB::query ( "SELECT id FROM members WHERE Username = '$myusername' and Password = '$encrypted_txt'" );
 	
 	$count = mysqli_num_rows ( $q2 );
-	echo $count;
 	
 	if ($count == 1) {
 		$q = DB::query ( "UPDATE members
@@ -20,7 +19,7 @@ if (isset ( $_POST ["username"] )) {
 		$_SESSION ['login_user'] = $myusername;
 		header ( "location:done.php" );
 	} else {
-		$error = "Unkown Username and/or password!";
+		$error = "Ukendt brugernavn og/eller kode";
 	}
 }
 ?>
@@ -38,7 +37,7 @@ if (isset ( $_POST ["username"] )) {
 <link rel="stylesheet" href="css/style.css" media="screen" />
 <link rel="stylesheet" href="css/mobile.css"
 	media="handheld, only screen and (max-device-width:1280px)" />
-<title>Test</title>
+<title>Log ind</title>
 </head>
 <body>
 	<div class="main">
@@ -46,11 +45,12 @@ if (isset ( $_POST ["username"] )) {
 		<div class="logo"></div>
 		<form action="" method="post">
 			<input type="text" name="username" id="username"
-				placeholder="Brugernavn" required="required" style="margin-top: 10%;"><br> <a
-				href="register.php" class="text">Ikke medlem?</a><br> <input
-				type="password" name="userpassword" id="userpassword"
-				placeholder="Kode" required="required"> <br> <a href="forgot.php"
-				class="text">Glemt din kode?</a> <br> <input type="submit"
+				placeholder="Brugernavn" required="required"
+				style="margin-top: 10%;"><br> <a href="register.php" class="text">Ikke
+				medlem?</a><br> <input type="password" name="userpassword"
+				id="userpassword" placeholder="Kode" required="required"> <br> <a
+				href="forgot.php" class="text">Glemt din kode?</a> <br> <input
+				type="submit" value="Log ind"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 			<div style="color: red; text-align: center;">
 				<?php echo $error?>

@@ -7,7 +7,7 @@ if (isset ( $_POST ["username"] )) {
 	$sql = "SELECT id FROM members WHERE Username = '$myusername'";
 	$q = DB::query ( $sql );
 	$count = mysqli_num_rows ( $q );
-	echo $count;
+	
 	if ($count < 1) {
 		
 		$encrypted_txt = DB::esc ( ED::encrypt ( $_POST ["userpassword"] ) );
@@ -18,8 +18,6 @@ if (isset ( $_POST ["username"] )) {
 		$q2 = DB::query ( $sql2 );
 		
 		header ( "location:index.php" );
-	} else {
-		$error = "Error: Username: $myusername is already in use!";
 	}
 }
 ?>
@@ -48,7 +46,7 @@ if (isset ( $_POST ["username"] )) {
 				placeholder="Email" required="required"> <input name="userpassword"
 				type="password" placeholder="Kode" required="required"> <input
 				name="userQuestion" placeholder="Hvad er yndlings dyr?"
-				required="required"><input type="submit"
+				required="required"><input type="submit" value="Opret"
 				onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
 
 		</form>
@@ -91,12 +89,11 @@ if (isset ( $_POST ["username"] )) {
 			if (text.indexOf("@") != -1 && text.indexOf(".") != -1
 					&& text.indexOf(".") != text.indexOf("@") + 1
 					&& text.lastIndexOf(".") != text.length - 1) {
-				getElement(id).style.color = "green";
-				code = "This email is a valid email!";
+				code = "";
 				ready = true;
 			} else {
 
-				code = "This email isn't valid!";
+				code = "Email ikke gyldig";
 				ready = false;
 			}
 			getElement(id).innerHTML = code;
